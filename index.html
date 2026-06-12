@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Музыкальный симулятор — один звук</title>
+  <title>Музыкальный симулятор — звук рядом с HTML</title>
   <style>
     * {
       margin: 0;
@@ -95,8 +94,8 @@
     <div class="key" data-key="75">K</div>
   </div>
 
-  <!-- ОДИН звуковой файл для всех клавиш -->
-  <audio id="sharedSound" src="sounds/vanilla-a.mp3"></audio>
+  <!-- ОДИН звуковой файл лежит РЯДОМ с index.html -->
+  <audio id="sharedSound" src="vanilla-a.mp3"></audio>
 
   <script>
     let score = 0;
