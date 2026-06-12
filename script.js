@@ -1,12 +1,21 @@
 function playSound(e) {
-  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const keyCode = e.keyCode || e.target.getAttribute('data-key');
+  const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${keyCode}"]`);
 
-  if (!audio) return; // Останавливаем функцию, если звук не найден
+  if (!audio) {
+    console.error('Аудиофайл не найден для клавиши:', keyCode);
+    return;
+  }
 
-  audio.currentTime = 0; // Перематываем звук на начало
-  audio.play();
-  key.classList.add('playing');
+  audio.currentTime = 0;
+  audio.play().catch(error => {
+    console.error('Ошибка воспроизведения звука:', error);
+  });
+
+  if (key) {
+    key.classList.add('playing');
+  }
 }
 
 function removeTransition(e) {
@@ -20,13 +29,6 @@ window.addEventListener('keydown', playSound);
 // Обработчик кликов мышью
 const keys = document.querySelectorAll('.key');
 keys.forEach(key => {
-  key.addEventListener('click', () => {
-    const keyCode = key.getAttribute('data-key');
-    const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
-    audio.currentTime = 0;
-    audio.play();
-    key.classList.add('playing');
-  });
-
+  key.addEventListener('click', playSound);
   key.addEventListener('transitionend', removeTransition);
 });
