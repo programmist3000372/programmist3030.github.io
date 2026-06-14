@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    
+    <title>Моя страница — Видео и программы</title>
     <style>
         * {
             margin: 0;
@@ -59,19 +59,29 @@
             display: none;
             padding: 20px;
             background: white;
-            min-height: 500px;
+            min-height: 400px;
         }
 
         .tab-content.active {
             display: block;
         }
 
-        /* Стиль для iframe с каналом RuTube */
-        .rutube-channel {
-            width: 100%;
-            height: 600px;
-            border: 1px solid #ddd;
+        /* Стиль для кнопки перехода на канал RuTube */
+        .channel-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #e53935; /* красный цвет RuTube */
+            color: white;
+            text-decoration: none;
             border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .channel-link:hover {
+            background: #c62828;
+            text-decoration: none;
         }
 
         /* Заполнитель для вкладки "Мои программы" */
@@ -98,10 +108,13 @@
         <!-- Содержимое вкладок -->
         <div id="videos" class="tab-content active">
             <h2>Мой канал на RuTube</h2>
-            <p>Здесь отображается мой канал с видео:</p>
-            <!-- Замените URL на ссылку вашего канала RuTube -->
-            <iframe class="rutube-channel" src="https://rutube.ru/channel/78249046"
-                    title="Мой канал RuTube" allowfullscreen></iframe>
+            <p>Перейдите на мой канал, чтобы посмотреть все видео:</p>
+            <!-- ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШ РЕАЛЬНУЮ ССЫЛКУ НА КАНАЛ RUTUBE -->
+            <a href="https://rutube.ru/channel/ваш-id-канала/"
+               target="_blank"
+               class="channel-link">
+               🡪 Открыть мой канал RuTube
+            </a>
         </div>
 
         <div id="programs" class="tab-content">
