@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #ddd;
+        }
+
+        /* Стили для вкладок */
+        .tabs {
+            display: flex;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-button {
+            padding: 15px 25px;
+            cursor: pointer;
+            background: #f0f0f0;
+            border: none;
+            margin-right: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .tab-button:hover {
+            background: #e0e0e0;
+        }
+
+        .tab-button.active {
+            background: #4CAF50;
+            color: white;
+        }
+
+        /* Содержимое вкладок */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            min-height: 500px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Стиль для iframe с каналом RuTube */
+        .rutube-channel {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Заполнитель для вкладки "Мои программы" */
+        .placeholder {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Моя страница</h1>
+        </header>
+
+        <!-- Вкладки -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'videos')">Мои видео</button>
+            <button class="tab-button" onclick="openTab(event, 'programs')">Мои программы</button>
+        </div>
+
+        <!-- Содержимое вкладок -->
+        <div id="videos" class="tab-content active">
+            <h2>Мой канал на RuTube</h2>
+            <p>Здесь отображается мой канал с видео:</p>
+            <!-- Замените URL на ссылку вашего канала RuTube -->
+            <iframe class="rutube-channel" src="https://rutube.ru/channel/78249046"
+                    title="Мой канал RuTube" allowfullscreen></iframe>
+        </div>
+
+        <div id="programs" class="tab-content">
+            <h2>Мои программы</h2>
+            <div class="placeholder">
+                Здесь будет информация о моих программах. Пока раздел в разработке.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Функция для переключения между вкладками
+        function openTab(evt, tabName) {
+            // Скрываем все содержимое вкладок
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Убираем активный класс у всех кнопок вкладок
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Показываем выбранную вкладку и делаем кнопку активной
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
