@@ -92,30 +92,30 @@
             font-style: italic;
         }
 
-        /* Кнопка для скачивания программы */
-        .download-exe-button {
+        /* Стиль для ссылки скачивания */
+        .download-link {
             display: inline-block;
-            padding: 12px 30px;
-            background: #FF5722;
-            color: white;
+            padding: 10px 20px;
+            color: #2196F3;
             text-decoration: none;
+            border: 2px solid #2196F3;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 16px;
             margin-top: 20px;
             text-align: center;
-            transition: background 0.3s, transform 0.2s;
-            border: none;
-            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .download-exe-button:hover {
-            background: #E64A19;
-            transform: translateY(-2px);
+        .download-link:hover {
+            background-color: #E3F2FD;
+            color: #1976D2;
+            border-color: #1976D2;
         }
 
-        .download-exe-button:active {
-            transform: translateY(0);
+        .security-info {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #666;
         }
     </style>
 </head>
@@ -146,16 +146,20 @@
         <div id="programs" class="tab-content">
             <h2>Мои программы</h2>
 
-            <div class="program-download">
+            <div class="program-item">
                 <h3>Программа HTML Create</h3>
                 <p>Мощная утилита для быстрого создания HTML‑шаблонов и веб‑страниц.</p>
 
-                <!-- Кнопка для скачивания EXE-файла -->
+                <!-- Ссылка для скачивания EXE-файла -->
                 <a href="HTML_Create.exe"
                    download="HTML_Create.exe"
-                   class="download-exe-button">
-                   🠊 Скачать HTML Create (EXE)
+                   class="download-link">
+                   🠊 Скачать HTML Create (EXE, ~5 МБ)
                 </a>
+
+                <div class="security-info">
+                    <p><strong>Внимание:</strong> файл имеет расширение <code>.exe</code> — это исполняемый файл для Windows. Перед запуском проверьте его антивирусом.</p>
+                </div>
             </div>
         </div>
     </div>
