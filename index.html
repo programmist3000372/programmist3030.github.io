@@ -91,11 +91,39 @@
             color: #666;
             font-style: italic;
         }
+
+        /* Кнопка для скачивания программы */
+        .download-exe-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #FF5722;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+            text-align: center;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-exe-button:hover {
+            background: #E64A19;
+            transform: translateY(-2px);
+        }
+
+        .download-exe-button:active {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        
+        <header>
+            <h1>Programmist7 — Мои проекты</h1>
+        </header>
 
         <!-- Вкладки -->
         <div class="tabs">
@@ -117,8 +145,17 @@
 
         <div id="programs" class="tab-content">
             <h2>Мои программы</h2>
-            <div class="placeholder">
-                Здесь будет информация о моих программах. Пока раздел в разработке.
+
+            <div class="program-download">
+                <h3>Программа HTML Create</h3>
+                <p>Мощная утилита для быстрого создания HTML‑шаблонов и веб‑страниц.</p>
+
+                <!-- Кнопка для скачивания EXE-файла -->
+                <a href="HTML_Create.exe"
+                   download="HTML_Create.exe"
+                   class="download-exe-button">
+                   🠊 Скачать HTML Create (EXE)
+                </a>
             </div>
         </div>
     </div>
