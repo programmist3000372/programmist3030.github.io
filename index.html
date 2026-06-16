@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -66,63 +67,42 @@
             display: block;
         }
 
-        /* Стиль для кнопки перехода на канал RuTube */
-        .channel-link {
+        /* Кнопка перехода на страницу скачивания */
+        .redirect-button {
             display: inline-block;
             padding: 12px 24px;
-            background: #e53935; /* красный цвет RuTube */
+            background: #FF9800;
             color: white;
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .channel-link:hover {
-            background: #c62828;
-            text-decoration: none;
-        }
-
-        /* Заполнитель для вкладки "Мои программы" */
-        .placeholder {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-            font-style: italic;
-        }
-
-        /* Стиль для ссылки скачивания */
-        .download-link {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #2196F3;
-            text-decoration: none;
-            border: 2px solid #2196F3;
             border-radius: 6px;
             font-weight: bold;
+            font-size: 16px;
             margin-top: 20px;
             text-align: center;
             transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
-        .download-link:hover {
-            background-color: #E3F2FD;
-            color: #1976D2;
-            border-color: #1976D2;
+        .redirect-button:hover {
+            background: #F57C00;
+            transform: translateY(-2px);
         }
 
-        .security-info {
-            margin-top: 15px;
-            font-size: 0.9em;
-            color: #666;
+        .redirect-button:active {
+            transform: translateY(0);
+        }
+
+        /* Информация о программе */
+        .program-info {
+            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Programmist7</h1>
+            <h1>Programmist7 — Мои проекты</h1>
         </header>
 
         <!-- Вкладки -->
@@ -135,7 +115,6 @@
         <div id="videos" class="tab-content active">
             <h2>Мой канал на RuTube</h2>
             <p>Перейдите на мой канал, чтобы посмотреть все видео:</p>
-            <!-- ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШ РЕАЛЬНУЮ ССЫЛКУ НА КАНАЛ RUTUBE -->
             <a href="https://rutube.ru/channel/78249046"
                target="_blank"
                class="channel-link">
@@ -146,19 +125,19 @@
         <div id="programs" class="tab-content">
             <h2>Мои программы</h2>
 
-            <div class="program-item">
+            <div class="program-info">
                 <h3>Программа HTML Create</h3>
                 <p>Мощная утилита для быстрого создания HTML‑шаблонов и веб‑страниц.</p>
-
-                <!-- Ссылка для скачивания EXE-файла -->
-                <a href="HTML_Create.exe"
-                   download="HTML_Create.exe"
-                   class="https://drive.google.com/file/d/1S11SDem-9FugYS5pxlTfgSFdPVF0wnlA/view?usp=sharing">
-                   🠊 Скачать HTML Create (EXE, ~5 МБ)
+                
+                <!-- Кнопка перехода на страницу скачивания -->
+                <a href="https://drive.google.com/file/d/1S11SDem-9FugYS5pxlTfgSFdPVF0wnlA/view?usp=drive_link"
+                   target="_blank"
+                   class="redirect-button">
+                   🠊 Перейти на страницу скачивания HTML Create
                 </a>
-
-                <div class="security-info">
-                    <p><strong>Внимание:</strong> файл имеет расширение <code>.exe</code> — это исполняемый файл для Windows. Перед запуском проверьте его антивирусом.</p>
+                
+                <div style="margin-top: 15px; font-size: 0.9em; color: #666;">
+                    <p><strong>Что будет дальше:</strong> вы перейдёте на специальную страницу, где сможете безопасно скачать программу.</p>
                 </div>
             </div>
         </div>
